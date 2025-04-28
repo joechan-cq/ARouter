@@ -1,14 +1,17 @@
-package com.alibaba.android.arouter.register.core
-
+import com.alibaba.android.arouter.register.core.RegisterTransform
+import com.alibaba.android.arouter.register.utils.IOUtils
 import com.alibaba.android.arouter.register.utils.Logger
 import com.alibaba.android.arouter.register.utils.ScanSetting
-import org.apache.commons.io.IOUtils
-import org.objectweb.asm.*
+import org.objectweb.asm.ClassReader
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.ClassWriter
+import org.objectweb.asm.MethodVisitor
 
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
 import java.util.zip.ZipEntry
+
 /**
  * generate register code into LogisticsCenter.class
  * @author billy.qi email: qiyilike@163.com

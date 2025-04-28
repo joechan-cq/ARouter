@@ -4,9 +4,8 @@ import com.alibaba.android.arouter.register.utils.Logger
 import com.alibaba.android.arouter.register.utils.ScanSetting
 import com.alibaba.android.arouter.register.utils.ScanUtil
 import com.android.build.api.transform.*
-import com.android.build.gradle.internal.pipeline.TransformManager
-import org.apache.commons.codec.digest.DigestUtils
-import org.apache.commons.io.FileUtils
+import org.gradle.internal.impldep.org.apache.commons.codec.digest.DigestUtils
+import org.gradle.internal.impldep.org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 /**

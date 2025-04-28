@@ -12,10 +12,10 @@ import org.gradle.api.Project
  * @author billy.qi email: qiyilike@163.com
  * @since 17/12/06 15:35
  */
-public class PluginLaunch implements Plugin<Project> {
+class PluginLaunch implements Plugin<Project> {
 
     @Override
-    public void apply(Project project) {
+    void apply(Project project) {
         def isApp = project.plugins.hasPlugin(AppPlugin)
         //only application module needs this plugin to generate register code
         if (isApp) {
