@@ -10,4 +10,7 @@ dependencies {
     implementation localGroovy()
     implementation 'com.android.tools.build:gradle:8.1.4'
     implementation 'com.alibaba:fastjson:1.2.69'
+    implementation 'com.squareup:javapoet:1.10.0'
+    implementation 'commons-codec:commons-codec:1.10'
+    implementation 'commons-io:commons-io:2.4'
 }

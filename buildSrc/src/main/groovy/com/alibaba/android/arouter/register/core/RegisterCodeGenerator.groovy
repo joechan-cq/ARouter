@@ -1,11 +1,8 @@
 import com.alibaba.android.arouter.register.core.RegisterTransform
-import com.alibaba.android.arouter.register.utils.IOUtils
 import com.alibaba.android.arouter.register.utils.Logger
 import com.alibaba.android.arouter.register.utils.ScanSetting
-import org.objectweb.asm.ClassReader
-import org.objectweb.asm.ClassVisitor
-import org.objectweb.asm.ClassWriter
-import org.objectweb.asm.MethodVisitor
+import org.apache.commons.io.IOUtils
+import org.objectweb.asm.*
 
 import java.util.jar.JarEntry
 import java.util.jar.JarFile

@@ -1,5 +1,7 @@
+import com.alibaba.android.arouter.register.launch.PluginLaunch
+
 apply plugin: 'com.android.application'
-//apply plugin: 'com.alibaba.arouter'
+apply plugin: PluginLaunch
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
