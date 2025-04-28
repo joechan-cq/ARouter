@@ -8,9 +8,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import com.alibaba.android.arouter.core.InstrumentationHook;
 import com.alibaba.android.arouter.core.LogisticsCenter;
@@ -21,7 +22,11 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.facade.model.RouteMeta;
-import com.alibaba.android.arouter.facade.service.*;
+import com.alibaba.android.arouter.facade.service.AutowiredService;
+import com.alibaba.android.arouter.facade.service.DegradeService;
+import com.alibaba.android.arouter.facade.service.InterceptorService;
+import com.alibaba.android.arouter.facade.service.PathReplaceService;
+import com.alibaba.android.arouter.facade.service.PretreatmentService;
 import com.alibaba.android.arouter.facade.template.ILogger;
 import com.alibaba.android.arouter.facade.template.IRouteGroup;
 import com.alibaba.android.arouter.thread.DefaultPoolExecutor;
@@ -403,8 +408,8 @@ final class _ARouter {
                     Object instance = fragmentMeta.getConstructor().newInstance();
                     if (instance instanceof Fragment) {
                         ((Fragment) instance).setArguments(postcard.getExtras());
-                    } else if (instance instanceof android.support.v4.app.Fragment) {
-                        ((android.support.v4.app.Fragment) instance).setArguments(postcard.getExtras());
+                    } else if (instance instanceof androidx.fragment.app.Fragment) {
+                        ((androidx.fragment.app.Fragment) instance).setArguments(postcard.getExtras());
                     }
 
                     return instance;

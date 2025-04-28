@@ -84,7 +84,7 @@ public class AutowiredProcessor extends BaseProcessor {
         TypeMirror iProvider = elementUtils.getTypeElement(Consts.IPROVIDER).asType();
         TypeMirror activityTm = elementUtils.getTypeElement(Consts.ACTIVITY).asType();
         TypeMirror fragmentTm = elementUtils.getTypeElement(Consts.FRAGMENT).asType();
-        TypeMirror fragmentTmV4 = elementUtils.getTypeElement(Consts.FRAGMENT_V4).asType();
+        TypeMirror fragmentTmX = elementUtils.getTypeElement(Consts.FRAGMENT_X).asType();
 
         // Build input param name.
         ParameterSpec objectParamSpec = ParameterSpec.builder(TypeName.OBJECT, "target").build();
@@ -154,7 +154,7 @@ public class AutowiredProcessor extends BaseProcessor {
                         if (types.isSubtype(parent.asType(), activityTm)) {  // Activity, then use getIntent()
                             isActivity = true;
                             statement += "getIntent().";
-                        } else if (types.isSubtype(parent.asType(), fragmentTm) || types.isSubtype(parent.asType(), fragmentTmV4)) {   // Fragment, then use getArguments()
+                        } else if (types.isSubtype(parent.asType(), fragmentTm) || types.isSubtype(parent.asType(), fragmentTmX)) {   // Fragment, then use getArguments()
                             statement += "getArguments().";
                         } else {
                             throw new IllegalAccessException("The field [" + fieldName + "] need autowired from intent, its parent must be activity or fragment!");

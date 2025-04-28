@@ -132,7 +132,7 @@ public class RouteProcessor extends BaseProcessor {
             TypeMirror type_Activity = elementUtils.getTypeElement(ACTIVITY).asType();
             TypeMirror type_Service = elementUtils.getTypeElement(SERVICE).asType();
             TypeMirror fragmentTm = elementUtils.getTypeElement(FRAGMENT).asType();
-            TypeMirror fragmentTmV4 = elementUtils.getTypeElement(Consts.FRAGMENT_V4).asType();
+            TypeMirror fragmentTmX = elementUtils.getTypeElement(Consts.FRAGMENT_X).asType();
 
             // Interface of ARouter
             TypeElement type_IRouteGroup = elementUtils.getTypeElement(IROUTE_GROUP);
@@ -186,7 +186,7 @@ public class RouteProcessor extends BaseProcessor {
                 RouteMeta routeMeta;
 
                 // Activity or Fragment
-                if (types.isSubtype(tm, type_Activity) || types.isSubtype(tm, fragmentTm) || types.isSubtype(tm, fragmentTmV4)) {
+                if (types.isSubtype(tm, type_Activity) || types.isSubtype(tm, fragmentTm) || types.isSubtype(tm, fragmentTmX)) {
                     // Get all fields annotation by @Autowired
                     Map<String, Integer> paramsType = new HashMap<>();
                     Map<String, Autowired> injectConfig = new HashMap<>();

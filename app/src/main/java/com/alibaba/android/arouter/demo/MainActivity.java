@@ -4,19 +4,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.fragment.app.Fragment;
+
 import com.alibaba.android.arouter.demo.module1.testactivity.TestDynamicActivity;
+import com.alibaba.android.arouter.demo.module1.testservice.SingleService;
+import com.alibaba.android.arouter.demo.service.HelloService;
 import com.alibaba.android.arouter.demo.service.model.TestObj;
 import com.alibaba.android.arouter.demo.service.model.TestParcelable;
 import com.alibaba.android.arouter.demo.service.model.TestSerializable;
-import com.alibaba.android.arouter.demo.service.HelloService;
-import com.alibaba.android.arouter.demo.module1.testservice.SingleService;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.facade.enums.RouteType;
