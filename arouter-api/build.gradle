@@ -22,12 +22,10 @@ android {
 
     buildTypes {
         release {
-            debuggable false
             minifyEnabled false
         }
-
-        lintOptions { abortOnError false }
     }
+    namespace 'com.alibaba.android.arouter'
 }
 
 dependencies {
