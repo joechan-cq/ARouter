@@ -1,5 +1,15 @@
 package com.alibaba.android.arouter.compiler.processor;
 
+import static com.alibaba.android.arouter.compiler.utils.Consts.ANNOTATION_TYPE_INTECEPTOR;
+import static com.alibaba.android.arouter.compiler.utils.Consts.IINTERCEPTOR;
+import static com.alibaba.android.arouter.compiler.utils.Consts.IINTERCEPTOR_GROUP;
+import static com.alibaba.android.arouter.compiler.utils.Consts.METHOD_LOAD_INTO;
+import static com.alibaba.android.arouter.compiler.utils.Consts.NAME_OF_INTERCEPTOR;
+import static com.alibaba.android.arouter.compiler.utils.Consts.PACKAGE_OF_GENERATE_FILE;
+import static com.alibaba.android.arouter.compiler.utils.Consts.SEPARATOR;
+import static com.alibaba.android.arouter.compiler.utils.Consts.WARNING_TIPS;
+import static javax.lang.model.element.Modifier.PUBLIC;
+
 import com.alibaba.android.arouter.compiler.utils.Consts;
 import com.alibaba.android.arouter.facade.annotation.Interceptor;
 import com.google.auto.service.AutoService;
@@ -14,6 +24,7 @@ import com.squareup.javapoet.WildcardTypeName;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -23,15 +34,9 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedOptions;
-import javax.annotation.processing.SupportedSourceVersion;
-import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.TypeMirror;
-
-import static com.alibaba.android.arouter.compiler.utils.Consts.*;
-import static javax.lang.model.element.Modifier.PUBLIC;
 
 /**
  * Process the annotation of #{@link Interceptor}
@@ -165,6 +170,16 @@ public class InterceptorProcessor extends BaseProcessor {
     private boolean verify(Element element) {
         Interceptor interceptor = element.getAnnotation(Interceptor.class);
         // It must be implement the interface IInterceptor and marked with annotation Interceptor.
-        return null != interceptor && ((TypeElement) element).getInterfaces().contains(iInterceptor);
+        if (interceptor != null) {
+            List<? extends TypeMirror> interfaces = ((TypeElement) element).getInterfaces();
+            for (TypeMirror anInterface : interfaces) {
+                if (anInterface.toString().equals(iInterceptor.toString())) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
     }
 }
