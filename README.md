@@ -1,5 +1,6 @@
 > Fork from Alibaba ARouter
-> JDK 17 & AGP 8 compatible
+> 
+> AndroidX & JDK 17 & AGP 8 compatible
 
 ```
     A framework for assisting in the renovation of Android app componentization

@@ -1,5 +1,6 @@
 > Fork from Alibaba ARouter
-> 已适配 JDK 17 和 AGP 8
+> 
+> 已适配 AndroidX、JDK 17和AGP 8
 
 ```
     一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦
