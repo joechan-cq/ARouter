@@ -1,5 +1,10 @@
 apply plugin: 'java'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 compileJava {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
@@ -11,7 +16,7 @@ dependencies {
     annotationProcessor 'com.google.auto.service:auto-service:1.0'
     compileOnly 'com.google.auto.service:auto-service-annotations:1.0'
 
-    implementation 'com.squareup:javapoet:1.10.0'
+    implementation 'com.squareup:javapoet:1.13.0'
 
     implementation 'org.apache.commons:commons-lang3:3.5'
     implementation 'org.apache.commons:commons-collections4:4.1'
@@ -20,3 +25,4 @@ dependencies {
 }
 
 apply from: rootProject.file('gradle/publish.gradle')
+

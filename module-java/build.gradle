@@ -8,7 +8,7 @@ dependencies {
     implementation project(':module-java-export')
 
     implementation "androidx.appcompat:appcompat:1.6.0"
-    implementation 'com.alibaba:fastjson:1.2.48'
+    implementation 'com.alibaba:fastjson:1.2.69'
 }
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)

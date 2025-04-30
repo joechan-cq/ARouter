@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.8.22"
 }
 
+apply(from = rootProject.file("../gradle/publish.gradle"))
+
 repositories {
     google() // 如果需要依赖 AGP
     mavenCentral()

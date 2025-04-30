@@ -6,7 +6,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:1.6.0"
     annotationProcessor project(':arouter-compiler')
 
-    implementation 'com.alibaba:fastjson:1.2.48'
+    implementation 'com.alibaba:fastjson:1.2.69'
 }
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
